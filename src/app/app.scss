@@ -1,0 +1,251 @@
+:host {
+  display: block;
+  min-height: 100dvh;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #24332d;
+}
+
+.page {
+  position: relative;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.75rem, 3vw, 2rem);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.82), transparent 34rem),
+    radial-gradient(circle at 12% 88%, rgba(183, 203, 174, 0.65), transparent 28rem),
+    radial-gradient(circle at 88% 82%, rgba(197, 213, 190, 0.65), transparent 26rem),
+    linear-gradient(135deg, #d6e2d0, #eef4ea);
+}
+
+.page::before,
+.page::after {
+  content: "";
+  position: absolute;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.32);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.page::before {
+  top: -8rem;
+  left: -8rem;
+}
+
+.page::after {
+  right: -9rem;
+  bottom: -9rem;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, 100%);
+  padding: clamp(1.5rem, 5vw, 4.5rem);
+  border: 1px solid rgba(94, 116, 101, 0.2);
+  border-radius: clamp(1.5rem, 4vw, 2.25rem);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow:
+    0 2rem 5rem rgba(55, 78, 65, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+  text-align: center;
+  backdrop-filter: blur(22px);
+}
+
+.hero {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.heart {
+  margin-inline: auto;
+  width: clamp(4.25rem, 9vw, 6rem);
+  height: clamp(4.25rem, 9vw, 6rem);
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.58), transparent 35%),
+    #f4dddd;
+  color: #b64d5e;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  line-height: 1;
+  box-shadow: 0 1.2rem 2.8rem rgba(181, 77, 92, 0.16);
+}
+
+.eyebrow {
+  margin: 1.35rem 0 0;
+  color: #6a7b70;
+  font-size: clamp(0.78rem, 1.5vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.45rem 0 0;
+  font-size: clamp(2.7rem, 8vw, 5.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.intro {
+  margin: 1.1rem auto 0;
+  max-width: 34rem;
+  color: #64756a;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.55;
+}
+
+.time-section {
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+}
+
+.section-label {
+  margin: 0 0 1rem;
+  color: #5e7167;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.4;
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.55rem, 1.4vw, 0.9rem);
+}
+
+.time-box {
+  min-width: 0;
+  padding: clamp(0.9rem, 2vw, 1.25rem) 0.65rem;
+  border: 1px solid rgba(91, 112, 99, 0.16);
+  border-radius: clamp(1rem, 2.5vw, 1.35rem);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent),
+    rgba(214, 226, 208, 0.78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.48);
+}
+
+.time-box strong {
+  display: block;
+  color: #24332d;
+  font-size: clamp(2rem, 4.4vw, 3.3rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.time-box span {
+  display: block;
+  margin-top: 0.55rem;
+  color: #66766c;
+  font-size: clamp(0.78rem, 1.4vw, 0.92rem);
+}
+
+.counter.secondary .time-box {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35), transparent),
+    rgba(255, 255, 255, 0.58);
+}
+
+.divider {
+  height: 1px;
+  margin: clamp(1.8rem, 4vw, 2.75rem) 0 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(88, 112, 99, 0.3),
+    transparent
+  );
+}
+
+@media (max-width: 920px) {
+  .counter {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .card {
+    width: min(720px, 100%);
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    place-items: stretch;
+    padding: 0.75rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100dvh - 1.5rem);
+    padding: 1.35rem 1rem;
+  }
+
+  .heart {
+    width: 4.25rem;
+    height: 4.25rem;
+    font-size: 2.35rem;
+  }
+
+  .eyebrow {
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 14vw, 4rem);
+  }
+
+  .intro {
+    margin-top: 0.85rem;
+    font-size: 0.98rem;
+  }
+
+  .time-section {
+    margin-top: 1.5rem;
+  }
+
+  .section-label {
+    margin-bottom: 0.75rem;
+    font-size: 0.98rem;
+  }
+
+  .counter {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .time-box {
+    padding: 0.8rem 0.35rem;
+    border-radius: 0.9rem;
+  }
+
+  .time-box strong {
+    font-size: clamp(1.65rem, 9vw, 2.2rem);
+  }
+
+  .time-box span {
+    margin-top: 0.35rem;
+    font-size: 0.72rem;
+  }
+
+  .divider {
+    margin-top: 1.4rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .counter {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
